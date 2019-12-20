@@ -1,0 +1,15 @@
+.emptyCell {
+  flex-grow: 1;
+  height: 50px;
+  border: 1px solid lightgrey;
+}
+
+.emptyRow {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-visualization {
+  overflow: scroll;
+  height: 600px;
+}
