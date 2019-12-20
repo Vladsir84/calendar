@@ -76,6 +76,26 @@ header {
   margin-left: 20px;
 }
 
+.main {
+  display: flex;
+  padding-top: 100px;
+  width: 100%;
+  z-index: 1;
+}
+.main .timing__blocks {
+  position: relative;
+  top: 51px;
+  margin-right: 10px;
+  margin-left: 10px;
+  height: 60px;
+  color: black;
+}
+.main .line__blocks {
+  height: 60px;
+  width: 10px;
+  border-top: 1px solid black;
+}
+
 * {
   box-sizing: border-box;
   font-family: Roboto;
