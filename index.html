@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
@@ -95,6 +94,44 @@
         <!--             <div class="line"></div> -->
 
     </section>
+
+    <!--Popup-->
+
+    <section class="popup">
+        <form class="popup__form">
+            <button class="close material-icons">
+            close  
+        </button>
+            <input class="input__name" type="text" placeholder="Add title">
+            <div class="date-block ">
+                <i class="Tiny material-icons">access_time</i>
+                <input class="start-date input-style" type="date" id="start" name="trip-start" value="2019-12-05" max="2020-12-05 ">
+                <select class="start-time time-list input-style " name="select "> 
+            
+            </select>
+                <span>-</span>
+                <select class="end-time time-list input-style " name="select ">       
+            
+            </select>
+
+                <input type="text" class="end-date input-style" aria-label="End date" value="22 Dec 2019" id="xEnDaIn" data-date="20191222" dir="ltr" data-initial-value="22 Dec 2019" data-previous-value="22 Dec 2019">
+            </div>
+            <div class="description ">
+                <i class="Tiny material-icons ">format_align_left
+                    </i>
+                <textarea class="description-input " name="text " cols="42 " rows="4 " placeholder="Add description"></textarea>
+            </div>
+            <div class="control ">
+                <button class="delete-event ">  
+                <i class="Tiny material-icons ">delete</i>
+            </button>
+                <button class="submit-button ">Save</button>
+            </div>
+        </form>
+        <span class="event__name "></span>
+        <span class="event__description "></span>
+    </section>
+
 
     <script src="./scripts/navigation.js" type="module"></script>
     <script src="scripts/calendar-visualization.js" type="module"></script>
