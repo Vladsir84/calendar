@@ -197,9 +197,9 @@ header {
 
 .input__name {
   border: none;
-  border-bottom: 1px solid #3c4043;
+  border-bottom: 1px solid lightgrey;
   font-size: 22px;
-  color: #3c4043;
+  color: lightgrey;
   outline: none;
   margin-left: 25px;
   width: 380px;
