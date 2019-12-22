@@ -20,11 +20,6 @@
   font-size: 20px;
   padding: 6px;
 }
-.day-number:hover {
-  background-color: blue;
-  color: white;
-  border-radius: 50%;
-}
 
 .day {
   width: 100%;
@@ -41,6 +36,12 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
+}
+
+.current-day {
+  background-color: blue;
+  color: white;
+  border-radius: 50%;
 }
 
 header {
