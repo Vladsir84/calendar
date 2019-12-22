@@ -10,7 +10,14 @@
 }
 
 .calendar-visualization {
-//   overflow: scroll;
-//   height: 600px;
-     width: 100%;
+  //   overflow: scroll;
+  //   height: 600px;
+  width: 100%;
+}
+
+.checked {
+  background-color: blue;
+  color: white;
+  font-size: 10px;
+  max-width: 206px;
 }

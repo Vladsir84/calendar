@@ -135,6 +135,13 @@ header {
   width: 100%;
 }
 
+.checked {
+  background-color: blue;
+  color: white;
+  font-size: 10px;
+  max-width: 206px;
+}
+
 .main {
   height: 550px;
   overflow-x: scroll;
