@@ -20,12 +20,6 @@
 .day-number {
   font-size: 20px;
   padding: 6px;
-
-  &:hover {
-    background-color: blue;
-    color: white;
-    border-radius: 50%;
-  }
 }
 
 .day {
@@ -43,4 +37,10 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
+}
+
+.current-day {
+  background-color: blue;
+  color: white;
+  border-radius: 50%;
 }
