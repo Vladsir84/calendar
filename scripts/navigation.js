@@ -1,40 +1,30 @@
 let dayNumbers = document.querySelectorAll('.day-number');
 
 export function Days() {
-    let currentDate = new Date();
-    let date = currentDate.getDate();
-    let dayOfWeek = currentDate.getDay();
+    let current = (new Date()).getDate();
+    let dayOfWeek = (new Date()).getDay();
+    dayNumbers[dayOfWeek].innerHTML = current;
+    dayNumbers[dayOfWeek].classList.add('current-day');
 
-    let arrLeft = [];
-    let arrRight = [];
+    let countRight = 6 - dayOfWeek; //6
+    let countLeft = 6 - countRight; //0
 
-    [...dayNumbers].forEach((elem, index) => {
-        if (index < dayOfWeek) {
-            arrLeft.push(elem);
-        } else if (index > dayOfWeek) {
-            arrRight.push(elem);
-        }
-        if (dayOfWeek === index) {
-            elem.innerHTML = date;
-            elem.classList.add('current-day');
-        }
-    });
+    for (let i = 0; i < countLeft; i++) {
+        let date = (new Date() + '').split(' ');
+        date[2] = (+date[2] - i) + '';
+        date = date.join(' ');
+        console.log(date)
+        dayNumbers[i].innerHTML = new Date(date).getDate();
+    }
+
+    for (let i = dayOfWeek + 1; i <= countRight; i++) {
+        let date = (new Date() + '').split(' ');
+        date[2] = (+date[2] + i) + '';
+        date = date.join(' ');
+        dayNumbers[i].innerHTML = new Date(date).getDate();
+    }
 
     let dates = document.querySelector('.dates');
-    // console.log(date)
-
-    let daysAtTheLeft = date - (dayOfWeek + 1);
-    let daysAtTheRight = date;
-    // console.log(dayOfWeek)
-
-    console.log(arrRight)
-
-    arrLeft
-        .forEach(x => x.innerHTML = ++daysAtTheLeft);
-    arrRight
-        .forEach(x => x.innerHTML = ++daysAtTheRight);
-
     dates.innerHTML = `${(new Date() + '').split(' ')[1]} ${(new Date()).getFullYear()}`;
-};
-
+}
 Days();
