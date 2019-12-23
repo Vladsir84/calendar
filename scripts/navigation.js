@@ -85,3 +85,13 @@ export function renderPreviousWeek() {
 
 arrow_button__prev.addEventListener('click', renderPreviousWeek);
 arrow_button__next.addEventListener('click', renderNextWeek);
+
+let today_button = document.querySelector('.today-button');
+
+export function today_button_function() {
+    arrayOfDates = [];
+    createDates();
+    renderDates();
+}
+
+today_button.addEventListener('click', today_button_function);
