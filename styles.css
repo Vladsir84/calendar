@@ -173,6 +173,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  display: none;
   z-index: 100;
 }
 .popup__form {
