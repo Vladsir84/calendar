@@ -1,30 +1,41 @@
 let dayNumbers = document.querySelectorAll('.day-number');
 
-export function Days() {
-    let current = (new Date()).getDate();
-    let dayOfWeek = (new Date()).getDay();
-    dayNumbers[dayOfWeek].innerHTML = current;
-    dayNumbers[dayOfWeek].classList.add('current-day');
+let arrayOfDates = [];
 
-    let countRight = 6 - dayOfWeek; //6
-    let countLeft = 6 - countRight; //0
+export function createDates() {
+    let currentDayOfWeek = (new Date()).getDay();
 
-    for (let i = 0; i < countLeft; i++) {
-        let date = (new Date() + '').split(' ');
-        date[2] = (+date[2] - i) + '';
-        date = date.join(' ');
-        console.log(date)
-        dayNumbers[i].innerHTML = new Date(date).getDate();
+    for (let i = 0; i < 7; i++) {
+        if (i < currentDayOfWeek) {
+            let currentDate = new Date();
+            let day = currentDate.getDate() - (i + 1);
+            let previosDate = currentDate.setDate(day);
+            arrayOfDates.unshift(new Date(previosDate));
+        }
+        if (currentDayOfWeek == i) {
+            arrayOfDates.push(new Date());
+        }
+        if (i > currentDayOfWeek) {
+            let currentDate = new Date();
+            let day = currentDate.getDate() + (i - 1);
+            let previosDate = currentDate.setDate(day);
+            arrayOfDates.push(new Date(previosDate));
+        }
     }
+}
 
-    for (let i = dayOfWeek + 1; i <= countRight; i++) {
-        let date = (new Date() + '').split(' ');
-        date[2] = (+date[2] + i) + '';
-        date = date.join(' ');
-        dayNumbers[i].innerHTML = new Date(date).getDate();
+export function renderDates() {
+    for (let i = 0; i < 7; i++) {
+        let content = (arrayOfDates[i] + '').split(' ')[2];
+        dayNumbers[i].innerHTML = content;
+        if (arrayOfDates[i] == new Date() + '') {
+            dayNumbers[i].classList.add('current-day');
+        }
     }
-
-    let dates = document.querySelector('.dates');
     dates.innerHTML = `${(new Date() + '').split(' ')[1]} ${(new Date()).getFullYear()}`;
 }
-Days();
+
+createDates()
+renderDates()
+
+console.log(arrayOfDates);
