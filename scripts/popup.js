@@ -83,7 +83,7 @@ const TimeElem = () => {
     generateNumbersRange(0, 23)
         .map(timeList => {
             let setTime = '';
-            let setSec = 0;
+            let setMin = 0;
             let cell = '00';
             for (let i = 0; i < 6; i++) {
                 timeList < 10 ? setTime = `0${timeList}` : setTime = timeList;
@@ -91,8 +91,8 @@ const TimeElem = () => {
                     `<option 
             value="${setTime}:${cell}"
             data-block-number='${timeList}'>${setTime}:${cell}</option> `)
-                setSec += 10;
-                cell = setSec;
+                setMin += 10;
+                cell = setMin;
             };
         })
 
