@@ -85,14 +85,14 @@ const TimeElem = () => {
             let setTime = '';
             let setSec = 0;
             let cell = '00';
-            for (let i = 0; i < 4; i++) {
+            for (let i = 0; i < 6; i++) {
                 timeList < 10 ? setTime = `0${timeList}` : setTime = timeList;
                 resultTime.push(
                     `<option 
             value="${setTime}:${cell}"
             data-block-number='${timeList}'>${setTime}:${cell}</option> `)
-                setSec += 15
-                cell = setSec
+                setSec += 10;
+                cell = setSec;
             };
         })
 
