@@ -165,6 +165,106 @@ header {
   border-top: 1px solid black;
 }
 
+.popup {
+  position: fixed;
+  display: flex;
+  left: 40%;
+  top: 0%;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 100;
+}
+.popup__form {
+  position: relative;
+  width: 450px;
+  height: 400px;
+  padding: 10px 10px 5px;
+  border-radius: 6px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 7px 34px -10px rgba(0, 0, 0, 0.46);
+  box-shadow: 0px 7px 34px -10px rgba(0, 0, 0, 0.46);
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 17px;
+  background-color: transparent;
+  border: none;
+}
+
+.input__name {
+  border: none;
+  border-bottom: 1px solid lightgrey;
+  font-size: 22px;
+  color: lightgrey;
+  outline: none;
+  margin-left: 25px;
+  width: 380px;
+  margin-top: 40px;
+}
+
+.date-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.input-style {
+  outline: none;
+  border: none;
+}
+
+.description {
+  margin-top: 50px;
+  display: flex;
+}
+
+.description-input {
+  margin-left: 10px;
+  resize: none;
+  border: none;
+}
+
+.submit-button {
+  width: 150px;
+  height: 40px;
+  background-color: blue;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+}
+
+.start-time,
+.start-time {
+  width: 65px;
+}
+
+.end-date,
+.start-date {
+  width: 140px;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.delete-event {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.popup-on {
+  display: flex;
+}
+
 * {
   box-sizing: border-box;
   font-family: Roboto;
