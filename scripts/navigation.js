@@ -1,4 +1,5 @@
 let dayNumbers = document.querySelectorAll('.day-number');
+let dates = document.querySelector('.dates');
 
 let arrayOfDates = [];
 
@@ -22,7 +23,7 @@ export function createDates() {
             arrayOfDates.push(new Date(previosDate));
         }
     }
-}
+};
 
 export function renderDates() {
     for (let i = 0; i < 7; i++) {
@@ -30,12 +31,57 @@ export function renderDates() {
         dayNumbers[i].innerHTML = content;
         if (arrayOfDates[i] == new Date() + '') {
             dayNumbers[i].classList.add('current-day');
+        } else {
+            dayNumbers[i].classList.remove('current-day');
         }
     }
-    dates.innerHTML = `${(new Date() + '').split(' ')[1]} ${(new Date()).getFullYear()}`;
-}
+    showCurrentMonthAndYear();
+};
 
-createDates()
-renderDates()
+export function showCurrentMonthAndYear() {
+    let arrOfMonth = [];
+    let result = [];
+    for (let i = 0; i < arrayOfDates.length; i++) {
+        arrOfMonth.push((arrayOfDates[i] + '').split(' ')[1]);
+    }
 
-console.log(arrayOfDates);
+    for (let str of arrOfMonth) {
+        if (!result.includes(str)) result.push(str);
+    }
+
+    if (result.length == 1) {
+        result = `${result[0]}`;
+    } else {
+        result = `${result[0]} - ${result[1]}`;
+    }
+
+    let year = (arrayOfDates[0] + '').split(' ')[3];
+    dates.innerHTML = `${result}  ${year}`;
+};
+
+createDates();
+renderDates();
+
+let arrow_button__next = document.querySelector('.arrow-button__next');
+let arrow_button__prev = document.querySelector('.arrow-button__prev');
+
+export function renderNextWeek() {
+    for (let i = 0; i < 7; i++) {
+        let nextDate = arrayOfDates[i].getDate() + 7;
+        nextDate = new Date(arrayOfDates[i]).setDate(nextDate);
+        arrayOfDates[i] = new Date(nextDate);
+    }
+    renderDates();
+};
+
+export function renderPreviousWeek() {
+    for (let i = 0; i < 7; i++) {
+        let nextDate = arrayOfDates[i].getDate() - 7;
+        nextDate = new Date(arrayOfDates[i]).setDate(nextDate);
+        arrayOfDates[i] = new Date(nextDate);
+    }
+    renderDates();
+};
+
+arrow_button__prev.addEventListener('click', renderPreviousWeek);
+arrow_button__next.addEventListener('click', renderNextWeek);
