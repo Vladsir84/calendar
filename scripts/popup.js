@@ -3,10 +3,8 @@ const addButton = (event) => {
     popup.classList.add('popup-switch');
     if (event.target.classList.value === '.emptyCell') {
         btnUpdate.classList.remove("update")
-
-        return
+       return
     }
-
 }
 
 const popupWindow = document.querySelector(`.calendar-visualization`);
