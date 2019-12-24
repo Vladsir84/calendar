@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   height: 100px;
+  width: 100%;
   border-bottom: 1px solid grey;
 }
 
@@ -34,8 +35,9 @@
 
 .week {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
+  margin-left: 50px;
 }
 
 .current-day {
@@ -173,8 +175,8 @@ header {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  display: none;
   z-index: 100;
+  display: none;
 }
 .popup__form {
   position: relative;
