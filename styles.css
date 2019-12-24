@@ -187,6 +187,10 @@ header {
   box-shadow: 0px 7px 34px -10px rgba(0, 0, 0, 0.46);
 }
 
+.popup-switch {
+  display: flex;
+}
+
 .close {
   position: absolute;
   right: 10px;
@@ -212,22 +216,6 @@ header {
   align-items: center;
   justify-content: center;
   margin-top: 60px;
-}
-
-.input-style {
-  outline: none;
-  border: none;
-}
-
-.description {
-  margin-top: 50px;
-  display: flex;
-}
-
-.description-input {
-  margin-left: 10px;
-  resize: none;
-  border: none;
 }
 
 .submit-button {
@@ -262,8 +250,20 @@ header {
   outline: none;
 }
 
-.popup-on {
+.input-style {
+  outline: none;
+  border: none;
+}
+
+.description {
+  margin-top: 50px;
   display: flex;
+}
+
+.description-input {
+  margin-left: 10px;
+  resize: none;
+  border: none;
 }
 
 * {
