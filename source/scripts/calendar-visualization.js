@@ -3,6 +3,8 @@ export const visual = document.querySelector('.calendar-visualization');
 
 export const calendarRendering = () => {
 
+    visual.innerHTML = '';
+
     for (let i = 1; i <= 24; i++) {
         const day = document.createElement('div');
         day.setAttribute('data-time', `${i < 10 ? 0 : ''}${i}:00 `);

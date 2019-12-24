@@ -1,3 +1,5 @@
+import { calendarRendering } from './calendar-visualization.js'
+
 let dayNumbers = document.querySelectorAll('.day-number');
 let dates = document.querySelector('.dates');
 
@@ -18,7 +20,7 @@ export function createDates() {
         }
         if (i > currentDayOfWeek) {
             let currentDate = new Date();
-            let day = currentDate.getDate() + (i - 2);
+            let day = currentDate.getDate() + (i - currentDate.getDay());
             let previosDate = currentDate.setDate(day);
             arrayOfDates.push(new Date(previosDate));
         }
@@ -72,6 +74,7 @@ export function renderNextWeek() {
         arrayOfDates[i] = new Date(nextDate);
     }
     renderDates();
+    calendarRendering();
 };
 
 export function renderPreviousWeek() {
@@ -81,6 +84,7 @@ export function renderPreviousWeek() {
         arrayOfDates[i] = new Date(nextDate);
     }
     renderDates();
+    calendarRendering();
 };
 
 arrow_button__prev.addEventListener('click', renderPreviousWeek);
