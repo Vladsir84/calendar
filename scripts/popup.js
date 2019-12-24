@@ -1,9 +1,9 @@
-const addButton = (event) => {
+export const addButton = (event) => {
     const popup = document.querySelector(`.popup`);
     popup.classList.add('popup-switch');
     if (event.target.classList.value === '.emptyCell') {
         btnUpdate.classList.remove("update")
-       return
+        return
     }
 }
 

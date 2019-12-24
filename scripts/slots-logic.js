@@ -1,6 +1,6 @@
 let calendar_visualization = document.querySelector('.calendar-visualization');
 
-const emptyCellClick = event => {
+export const emptyCellClick = event => {
     let dayNumber = event.target.dataset.number;
     let monthName = event.target.dataset.month;
     let dayName = event.target.dataset.day;

@@ -1,4 +1,4 @@
-const generateNumbersRange = (from, to) => {
+export const generateNumbersRange = (from, to) => {
     const result = [];
 
     for (let i = from; i <= to; i++) {
@@ -8,7 +8,8 @@ const generateNumbersRange = (from, to) => {
 }
 
 const tableTimesElem = document.querySelector('.timing');
-const getTimesBlocks = () => {
+
+export const getTimesBlocks = () => {
     const result = [];
 
     generateNumbersRange(1, 23)
