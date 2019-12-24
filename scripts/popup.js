@@ -1,13 +1,13 @@
 // let selectedId;
 // let selectedElem;
 
-// const inputName = document.querySelector(`.input__name`);
-// const startDate = document.querySelector(`.start-date`);
-// const endDate = document.querySelector(`.end-date`);
-// const startTime = document.querySelector('.start-time')
-// const endTime = document.querySelector('.end-time')
-// const description = document.querySelector('.description-input')
-// const btnUpdate = document.querySelector('.submit-button');
+const inputName = document.querySelector(`.input__name`);
+const startDate = document.querySelector(`.start-date`);
+const endDate = document.querySelector(`.end-date`);
+const startTime = document.querySelector('.start-time')
+const endTime = document.querySelector('.end-time')
+const description = document.querySelector('.description-input')
+const btnUpdate = document.querySelector('.submit-button');
 
 
 const selectDay = (event) => {
