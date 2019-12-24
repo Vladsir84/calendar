@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   height: 100px;
+  width: 100%;
   border-bottom: 1px solid grey;
 }
 
@@ -34,9 +35,9 @@
 
 .week {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100%;
-  margin-left: 59px;
+  margin-left: 50px;
 }
 
 .current-day {
