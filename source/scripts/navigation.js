@@ -1,7 +1,7 @@
 let dayNumbers = document.querySelectorAll('.day-number');
 let dates = document.querySelector('.dates');
 
-let arrayOfDates = [];
+export let arrayOfDates = [];
 
 export function createDates() {
     let currentDayOfWeek = (new Date()).getDay();
