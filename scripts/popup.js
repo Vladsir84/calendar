@@ -16,7 +16,40 @@ const selectDay = (event) => {
 
         return
     }
+    // if (event.target.classList.contains(".create-event")) {
 
+    //     let dateNow = new Date();
+    //     inputName.value = '';
+    //     startDate.value = dateNow.getFullYear() + '-' + check(dateNow.getMonth()) + "-" + check(dateNow.getDate());
+    //     endDate.value = dateNow.getFullYear() + '-' + check(dateNow.getMonth()) + "-" + check(dateNow.getDate())
+    //     startTime.value = `${check(dateNow.getHours())+':00'}`
+    //     endTime.value = `${check(dateNow.getHours()+1)+':00'}`
+    //     description.value = ''
+
+    // } else {
+    //     btnUpdate.classList.add("update")
+
+    //     // const getId = event.target.dataset.idNumber;
+    //     // let eventObj = events.find(elem => elem.id == getId)
+    //     // let startEventTime = new Date(events[getId].startDateEvent)
+    //     // let endEventTime = new Date(events[getId].endDateEvent)
+    //     // let year = startEventTime.getFullYear();
+    //     // let months = check(startEventTime.getMonth() + 1)
+    //     // let day = check(startEventTime.getDate())
+    //     // let valueStartHour = check(startEventTime.getHours())
+    //     // let valueStartMin = check(startEventTime.getMinutes())
+    //     // let valueEndHour = check(endEventTime.getHours())
+    //     // let valueEndMin = check(endEventTime.getMinutes())
+
+    //     inputName.value = eventObj.name;
+    //     startDate.value = year + '-' + months + '-' + day;
+    //     endDate.value = startDate.value
+    //     startTime.value = `${valueStartHour+':'+valueStartMin}`
+    //     endTime.value = `${valueEndHour+':'+valueEndMin}`
+    //     description.value = eventObj.description;
+
+    //     return selectedElem = eventObj, selectedId = getId;
+    // }
 }
 
 
