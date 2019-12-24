@@ -18,7 +18,7 @@ export function createDates() {
         }
         if (i > currentDayOfWeek) {
             let currentDate = new Date();
-            let day = currentDate.getDate() + (i - 1);
+            let day = currentDate.getDate() + (i - 2);
             let previosDate = currentDate.setDate(day);
             arrayOfDates.push(new Date(previosDate));
         }
