@@ -1,23 +1,23 @@
 .emptyCell {
-  flex-grow: 1;
-  height: 50px;
-  border: 1px solid lightgrey;
+    flex-grow: 1;
+    height: 50px;
+    border: 1px solid lightgrey;
 }
 
 .emptyRow {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .calendar-visualization {
-  //   overflow: scroll;
-  //   height: 600px;
-  width: 100%;
+    //   overflow: scroll;
+    //   height: 600px;
+    width: 100%;
 }
 
 .checked {
-  background-color: blue;
-  color: white;
-  font-size: 10px;
-  max-width: 206px;
+    background-color: blue;
+    color: white;
+    font-size: 10px;
+    max-width: 206px;
 }
