@@ -18,6 +18,7 @@ export const calendarRendering = () => {
             let dateOfSlot = date.split(' ')[2];
             hour.setAttribute('data-day', `${dayNameofSlot}`);
             hour.setAttribute('data-date', `${dateOfSlot}`);
+            hour.setAttribute('data-number', `${j - 1}`);
             hour.classList.add('emptyCell');
             day.append(hour);
         }
