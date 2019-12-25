@@ -3,19 +3,15 @@ const addButton = (event) => {
     popup.classList.add('popup-switch');
     if (event.target.classList.value === '.emptyCell') {
         btnUpdate.classList.remove("update")
-
-        return
+      return
     }
-
 }
 
 const timeListElemStart = document.querySelector('.start-time');
 const timeListElemEnd = document.querySelector('.end-time');
 const popupWindow = document.querySelector(`.calendar-visualization`);
 
-
 const btnCreate = document.querySelector('.create-button');
-
 
 btnCreate.addEventListener('click', addButton);
 
