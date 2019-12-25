@@ -11,13 +11,14 @@ export const emptyCellClick = event => {
 
 calendar_visualization.addEventListener('click', emptyCellClick);
 
-function displayEvent(starttime, endTime, dayNumber, text) {
+function displayEvent(starttime, endTime, text) {
+    let dayNumber = endTime.getDay();
     let diff = ((endTime - starttime) / 1000 / 60);
     let eventPlace = document.querySelector('.event-place')
     let activeEvent = document.createElement('div');
     activeEvent.classList.add('active_event');
     activeEvent.style.height = `${diff}px`;
-    activeEvent.style.marginLeft = `${60 + dayNumber * 208}px`
+    activeEvent.style.marginLeft = `${62 + dayNumber * 208}px`
     activeEvent.style.marginTop = `${diff}px`;
     eventPlace.append(activeEvent);
     activeEvent.innerHTML += `${text}<br>`
@@ -26,8 +27,12 @@ function displayEvent(starttime, endTime, dayNumber, text) {
 
 let x = new Date('December 17, 1995 03:24:00');
 let y = new Date('December 17, 1995 04:54:00');
-displayEvent(x, y, 5, 'Новое задание');
+displayEvent(x, y, 'Новое задание');
 
-let x1 = new Date('December 17, 1995 00:05:00');
-let y1 = new Date('December 17, 1995 01:54:00');
-displayEvent(x1, y1, 3, 'Новое задание');
+let x1 = new Date('December 19, 1995 00:05:00');
+let y1 = new Date('December 19, 1995 01:54:00');
+displayEvent(x1, y1, 'Новое задание');
+
+let x2 = new Date('December 21, 1995 02:15:00');
+let y2 = new Date('December 21, 1995 02:55:00');
+displayEvent(x2, y2, 'Новое задание');
