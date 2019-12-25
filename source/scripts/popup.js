@@ -18,7 +18,7 @@ btnCreate.addEventListener('click', addButton);
 export const TimeElem = () => {
     let resultTime = [];
 
-export generateNumbersRange(0, 23)
+ generateNumbersRange(0, 23)
         .map(timeList => {
             let setTime = '';
             let setMin = 0;
