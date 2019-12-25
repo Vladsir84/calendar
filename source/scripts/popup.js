@@ -17,31 +17,31 @@ const btnCreate = document.querySelector('.create-button');
 
 btnCreate.addEventListener('click', addButton);
 
-const TimeElem = () => {
-    let resultTime = [];
+// const TimeElem = () => {
+//     let resultTime = [];
 
-    generateNumbersRange(0, 23)
-        .map(timeList => {
-            let setTime = '';
-            let setMin = 0;
-            let cell = '00';
-            for (let i = 0; i < 6; i++) {
-                timeList < 10 ? setTime = `0${timeList}` : setTime = timeList;
-                resultTime.push(
-                    `<option 
-            value="${setTime}:${cell}"
-            data-block-number='${timeList}'>${setTime}:${cell}</option> `)
-                setMin += 10;
-                cell = setMin;
-            };
-        })
+//     generateNumbersRange(0, 23)
+//         .map(timeList => {
+//             let setTime = '';
+//             let setMin = 0;
+//             let cell = '00';
+//             for (let i = 0; i < 6; i++) {
+//                 timeList < 10 ? setTime = `0${timeList}` : setTime = timeList;
+//                 resultTime.push(
+//                     `<option 
+//             value="${setTime}:${cell}"
+//             data-block-number='${timeList}'>${setTime}:${cell}</option> `)
+//                 setMin += 10;
+//                 cell = setMin;
+//             };
+//         })
 
-    return resultTime.join('');
-}
+//     return resultTime.join('');
+// }
 
-const renderTimeList = () => {
-    timeListElemStart.innerHTML = TimeElem();
-    timeListElemEnd.innerHTML = TimeElem();
-}
+// const renderTimeList = () => {
+//     timeListElemStart.innerHTML = TimeElem();
+//     timeListElemEnd.innerHTML = TimeElem();
+// }
 
-renderTimeList()
+// renderTimeList()
