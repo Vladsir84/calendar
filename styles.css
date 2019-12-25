@@ -124,7 +124,7 @@ header {
 }
 
 .emptyCell {
-  flex-grow: 1;
+  width: 208px;
   height: 50px;
   border: 1px solid lightgrey;
 }
@@ -138,16 +138,8 @@ header {
   width: 100%;
 }
 
-.checked {
-  background-color: blue;
-  color: white;
-  font-size: 10px;
-  max-width: 206px;
-}
-
 .main {
   display: flex;
-  padding-top: 5px;
   width: 100%;
   z-index: 1;
 }
@@ -163,6 +155,14 @@ header {
   height: 50px;
   width: 10px;
   border-top: 1px solid black;
+}
+
+.active_event {
+  background-color: blue;
+  font-size: 15px;
+  color: white;
+  width: 190px;
+  position: absolute;
 }
 
 .popup {

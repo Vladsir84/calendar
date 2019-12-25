@@ -1,6 +1,5 @@
 .main {
   display: flex;
-  padding-top: 5px;
   width: 100%;
   z-index: 1;
   .timing {
@@ -20,4 +19,12 @@
       border-top: 1px solid black;
     }
   }
+}
+
+.active_event {
+  background-color: blue;
+  font-size: 15px;
+  color: white;
+  width: 190px;
+  position: absolute;
 }
