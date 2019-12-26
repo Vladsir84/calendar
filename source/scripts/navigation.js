@@ -1,5 +1,4 @@
 import { calendarRendering } from './calendar-visualization.js'
-// import { displayEvent } from './slots-logic.js'
 
 let dayNumbers = document.querySelectorAll('.day-number');
 let dates = document.querySelector('.dates');
