@@ -8,5 +8,3 @@ export const addEvents = (name, newDate, startDate, endDate) => {
     Obj.endDate = 12;
     arrOfEvents.push(Obj)
 }
-addEvents();
-console.log(arrOfEvents);
