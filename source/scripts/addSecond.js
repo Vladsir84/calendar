@@ -2,9 +2,9 @@ import { arrOfEvents } from './storage.js';
 
 export const addEvents = (name, newDate, startDate, endDate) => {
     let Obj = {};
-    Obj.name = 1;
-    Obj.newDate = 12;
-    Obj.startDate = 1;
-    Obj.endDate = 12;
+    Obj.name = name;
+    Obj.newDate = newDate;
+    Obj.startDate = startDate;
+    Obj.endDate = endDate;
     arrOfEvents.push(Obj)
 }
