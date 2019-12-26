@@ -1,5 +1,5 @@
 import { arrayOfDates } from './navigation.js';
-import { arrOfEvents } from './storage.js'
+// import { arrOfEvents } from './storage.js'
 
 let calendar_visualization = document.querySelector('.calendar-visualization');
 
@@ -47,4 +47,4 @@ export function renderEvents(arrOfEvents) {
     }
 };
 
-renderEvents(arrOfEvents);
+// renderEvents(arrOfEvents);
