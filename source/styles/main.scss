@@ -1,30 +1,30 @@
 .main {
-  display: flex;
-  width: 100%;
-  z-index: 1;
-  .timing {
-    &__blocks {
-      position: relative;
-      top: 60px;
-      margin-right: 10px;
-      margin-left: 10px;
-      height: 60px;
-      color: black;
+    display: flex;
+    width: 100%;
+    z-index: 1;
+    .timing {
+        &__blocks {
+            position: relative;
+            top: 60px;
+            margin-right: 10px;
+            margin-left: 10px;
+            height: 60px;
+            color: black;
+        }
     }
-  }
-  .line {
-    &__blocks {
-      height: 50px;
-      width: 10px;
-      border-top: 1px solid black;
+    .line {
+        &__blocks {
+            height: 50px;
+            width: 10px;
+            border-top: 1px solid black;
+        }
     }
-  }
 }
 
 .active_event {
-  background-color: blue;
-  font-size: 15px;
-  color: white;
-  width: 190px;
-  position: absolute;
+    background-color: blue;
+    font-size: 15px;
+    color: white;
+    width: 190px;
+    position: absolute;
 }

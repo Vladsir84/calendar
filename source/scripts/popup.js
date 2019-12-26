@@ -3,22 +3,31 @@ export const addButton = (event) => {
     popup.classList.add('popup-switch');
     if (event.target.classList.value === '.emptyCell') {
         btnUpdate.classList.remove("update")
-      return
+        return
     }
 }
 
 const timeListElemStart = document.querySelector('.start-time');
 const timeListElemEnd = document.querySelector('.end-time');
-const popupWindow = document.querySelector(`.calendar-visualization`);
+// const popupWindow = document.querySelector(`.calendar-visualization`);
 
 const btnCreate = document.querySelector('.create-button');
 
 btnCreate.addEventListener('click', addButton);
 
-export const TimeElem = () => {
+export const setTimer = (from, to) => {
+    const result = [];
+
+    for (let i = from; i <= to; i++) {
+        result.push(i);
+    };
+    return result;
+}
+
+export const timeElem = () => {
     let resultTime = [];
 
- generateNumbersRange(0, 23)
+    setTimer(0, 23)
         .map(timeList => {
             let setTime = '';
             let setMin = 0;
@@ -38,8 +47,8 @@ export const TimeElem = () => {
 }
 
 export const renderTimeList = () => {
-    timeListElemStart.innerHTML = TimeElem();
-    timeListElemEnd.innerHTML = TimeElem();
+    timeListElemStart.innerHTML = timeElem();
+    timeListElemEnd.innerHTML = timeElem();
 }
 
 renderTimeList()
