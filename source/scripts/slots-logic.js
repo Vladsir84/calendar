@@ -1,5 +1,4 @@
 import { arrayOfDates } from './navigation.js';
-// import { arrOfEvents } from './storage.js'
 
 let calendar_visualization = document.querySelector('.calendar-visualization');
 
@@ -42,7 +41,6 @@ export function displayEvent(starttime, endTime, text) {
 
 export function renderEvents(arrOfEvents) {
     for (let i = 0; i < arrOfEvents.length; i++) {
-        console.log(arrOfEvents[i])
         displayEvent(arrOfEvents[i].startDate, arrOfEvents[i].endDate, name);
     }
 };
