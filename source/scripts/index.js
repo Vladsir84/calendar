@@ -4,5 +4,5 @@ import { generateNumbersRange, getTimesBlocks, } from './main.js';
 import { emptyCellClick } from './slots-logic.js';
 import { addButton, timeElem, setTimer, renderTimeList } from './popup.js';
 import { arrOfEvents } from './storage.js';
-import { close, addEvent } from './addEvent.js';
+import { close, addEvents } from './addEvent.js';
 // import { addEvents } from './addSecond.js';
