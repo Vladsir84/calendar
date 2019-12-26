@@ -4,6 +4,9 @@ const btnSend = document.querySelector('.submit-button');
 const btnClose = document.querySelector('.close');
 const btnUpdateEvent = document.querySelector('.submit-button');
 
+
+// btnSend.addEventListener('input', addEvent);
+
 export const addEvent = (event) => {
     event.preventDefault();
     if (btnUpdateEvent.classList.contains("update")) {
@@ -20,12 +23,40 @@ export const addEvent = (event) => {
     let start = new Date(startDate.value + 'T' + startTime.value);
     let end = new Date(endDate.value + 'T' + endTime.value);
 
+    if (!errorDate(start.getTime(), end.getTime())) return;
+    if (!duration(start, end)) return;
+    if (!checkEvent()) return;
+
     if (inputStartTime.value > inputEndTime.value) {
-        console.log(123);
-
+        // console.log(123);
+        arrOfEvents.push({
+            id: events.length,
+            name: inputName.value,
+            newDate: new Date(),
+            startDate: inputStartDate.value + 'T' + inputStartTime.value,
+            endDate: inputStartDate.value + 'T' + '24:00',
+            description: inputDescription.value,
+            transfer: 'main',
+        });
+        arrOfEvents.push({
+            id: events.length,
+            name: inputName.value,
+            newDate: new Date(),
+            startDate: inputEndDate.value + 'T' + '00:00',
+            endDate: inputEndDate.value + 'T' + inputEndTime.value,
+            description: inputDescription.value,
+            transfer: 'additional',
+        });
     } else {
-        console.log(225);
-
+        // console.log(225);
+        arrOfEvents.push({
+            id: events.length,
+            name: inputName.value,
+            newDate: new Date(),
+            startDate: inputStartDate.value + 'T' + inputStartTime.value,
+            endDate: inputEndDate.value + 'T' + inputEndTime.value,
+            description: inputDescription.value,
+        });
     };
     inputName.value = '';
     inputDescription.value = '';
