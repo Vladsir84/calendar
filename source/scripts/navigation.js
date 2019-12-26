@@ -1,4 +1,6 @@
 import { calendarRendering } from './calendar-visualization.js'
+import { arrOfEvents } from './storage.js'
+import { renderEvents } from './slots-logic.js'
 
 let dayNumbers = document.querySelectorAll('.day-number');
 let dates = document.querySelector('.dates');
@@ -38,6 +40,9 @@ export function renderDates() {
         }
     }
     showCurrentMonthAndYear();
+    let clear = document.querySelectorAll('.active_event')
+    for (let i = 0; i < clear.length; i++) clear[i].remove();
+    renderEvents(arrOfEvents);
 };
 
 export function showCurrentMonthAndYear() {
