@@ -11,29 +11,34 @@ export const emptyCellClick = event => {
 };
 
 calendar_visualization.addEventListener('click', emptyCellClick);
-let eventPlace = document.querySelector('.event-place')
+let eventPlace = document.querySelectorAll('.day');
+let eventDay = document.querySelectorAll('.day-number');
+console.log(eventDay[0]);
 
 export function displayEvent(starttime, endTime, text) {
     if (arrayOfDates[0].getMonth() === starttime.getMonth()) {
         let dayNumber = endTime.getDay();
         let diff = ((endTime - starttime) / 1000 / 60);
         let activeEvent = document.createElement('div');
-        activeEvent.classList.add('active_event');
-        activeEvent.style.height = `${diff}px`;
-        activeEvent.style.marginLeft = `${62 + dayNumber * 208}px`
-        activeEvent.style.marginTop = `${diff}px`;
-        eventPlace.append(activeEvent);
-        activeEvent.innerHTML += `${text}<br>`
-        activeEvent.innerHTML += `${(starttime + '').split(' ')[4]} - ${(endTime + '').split(' ')[4]}`;
+        for (let i = 0; i < 7; i++) {
+            if (eventDay[i].innerHTML == endTime.getDate()) {
+                eventPlace[i].append(activeEvent);
+                activeEvent.classList.add('active_event');
+                activeEvent.style.height = `${diff}px`;
+                activeEvent.style.marginTop = `104px`;
+                activeEvent.innerHTML += `${text}<br>`
+                activeEvent.innerHTML += `${(starttime + '').split(' ')[4]} - ${(endTime + '').split(' ')[4]}`;
+            }
+        }
     }
 };
 
-let x = new Date('December 17, 1995 03:24:00');
-let y = new Date('December 17, 1995 04:54:00');
+let x = new Date('December 22, 1995 03:00:00');
+let y = new Date('December 22, 1995 04:00:00');
 displayEvent(x, y, 'Новое задание');
 
-let x1 = new Date('December 19, 1995 00:05:00');
-let y1 = new Date('December 19, 1995 01:54:00');
+let x1 = new Date('December 24, 1995 00:05:00');
+let y1 = new Date('December 24, 1995 01:54:00');
 displayEvent(x1, y1, 'Новое задание');
 
 let x2 = new Date('October 21, 1995 02:15:00');

@@ -9,27 +9,36 @@ export const addButton = (event) => {
 
 const timeListElemStart = document.querySelector('.start-time');
 const timeListElemEnd = document.querySelector('.end-time');
-const popupWindow = document.querySelector(`.calendar-visualization`);
+// const popupWindow = document.querySelector(`.calendar-visualization`);
 
 const btnCreate = document.querySelector('.create-button');
 
 btnCreate.addEventListener('click', addButton);
 
-export const TimeElem = () => {
+export const setTimer = (from, to) => {
+    const result = [];
+
+    for (let i = from; i <= to; i++) {
+        result.push(i);
+    };
+    return result;
+}
+
+export const timeElem = () => {
     let resultTime = [];
 
-    generateNumbersRange(0, 23)
+    setTimer(0, 23)
         .map(timeList => {
             let setTime = '';
             let setMin = 0;
             let cell = '00';
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < 4; i++) {
                 timeList < 10 ? setTime = `0${timeList}` : setTime = timeList;
                 resultTime.push(
                     `<option 
             value="${setTime}:${cell}"
             data-block-number='${timeList}'>${setTime}:${cell}</option> `)
-                setMin += 10;
+                setMin += 15;
                 cell = setMin;
             };
         })
@@ -38,8 +47,8 @@ export const TimeElem = () => {
 }
 
 export const renderTimeList = () => {
-    timeListElemStart.innerHTML = TimeElem();
-    timeListElemEnd.innerHTML = TimeElem();
+    timeListElemStart.innerHTML = timeElem();
+    timeListElemEnd.innerHTML = timeElem();
 }
 
 renderTimeList()
