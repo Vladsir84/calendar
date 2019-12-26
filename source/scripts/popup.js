@@ -1,4 +1,4 @@
-const addButton = (event) => {
+export const addButton = (event) => {
     const popup = document.querySelector(`.popup`);
     popup.classList.add('popup-switch');
     if (event.target.classList.value === '.emptyCell') {
@@ -15,10 +15,10 @@ const btnCreate = document.querySelector('.create-button');
 
 btnCreate.addEventListener('click', addButton);
 
-const TimeElem = () => {
+export const TimeElem = () => {
     let resultTime = [];
 
-    generateNumbersRange(0, 23)
+ generateNumbersRange(0, 23)
         .map(timeList => {
             let setTime = '';
             let setMin = 0;
@@ -37,7 +37,7 @@ const TimeElem = () => {
     return resultTime.join('');
 }
 
-const renderTimeList = () => {
+export const renderTimeList = () => {
     timeListElemStart.innerHTML = TimeElem();
     timeListElemEnd.innerHTML = TimeElem();
 }
