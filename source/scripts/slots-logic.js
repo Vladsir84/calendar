@@ -11,13 +11,12 @@ export const emptyCellClick = event => {
 };
 
 calendar_visualization.addEventListener('click', emptyCellClick);
+
 let eventPlace = document.querySelectorAll('.day');
 let eventDay = document.querySelectorAll('.day-number');
-console.log(eventDay[0]);
 
 export function displayEvent(starttime, endTime, text) {
     if (arrayOfDates[0].getMonth() === starttime.getMonth()) {
-        let dayNumber = endTime.getDay();
         let diff = ((endTime - starttime) / 1000 / 60);
         let activeEvent = document.createElement('div');
         for (let i = 0; i < 7; i++) {
@@ -25,7 +24,11 @@ export function displayEvent(starttime, endTime, text) {
                 eventPlace[i].append(activeEvent);
                 activeEvent.classList.add('active_event');
                 activeEvent.style.height = `${diff}px`;
-                activeEvent.style.marginTop = `104px`;
+
+                let timeParts = (starttime + '').split(' ')[4].split(':');
+                let margin = +timeParts[0] * 60 + +timeParts[1];
+
+                activeEvent.style.marginTop = `${margin + 100}px`;
                 activeEvent.innerHTML += `${text}<br>`
                 activeEvent.innerHTML += `${(starttime + '').split(' ')[4]} - ${(endTime + '').split(' ')[4]}`;
             }
