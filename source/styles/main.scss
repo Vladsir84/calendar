@@ -32,3 +32,24 @@
   top: 0;
   left: 0;
 }
+
+.redLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+}
+
+.redLine-round {
+  background-color: #ea4335;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+}
+
+.redLine-line {
+  margin-top: 4px;
+  width: 85%;
+  border-top: #ea4335 solid 2px;
+}

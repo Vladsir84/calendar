@@ -1,6 +1,7 @@
 import { calendarRendering } from './calendar-visualization.js'
 import { arrOfEvents } from './storage.js'
 import { renderEvents } from './slots-logic.js'
+import { redLine } from './red-line.js'
 
 let dayNumbers = document.querySelectorAll('.day-number');
 let dates = document.querySelector('.dates');
@@ -43,6 +44,7 @@ export function renderDates() {
     let clear = document.querySelectorAll('.active_event')
     for (let i = 0; i < clear.length; i++) clear[i].remove();
     renderEvents(arrOfEvents);
+    redLine();
 };
 
 export function showCurrentMonthAndYear() {
@@ -80,6 +82,10 @@ export function renderNextWeek() {
     }
     renderDates();
     calendarRendering();
+
+    let redLineElement = document.querySelector('.redLine');
+    redLineElement.remove('div');
+    redLine();
 };
 
 export function renderPreviousWeek() {
@@ -90,6 +96,11 @@ export function renderPreviousWeek() {
     }
     renderDates();
     calendarRendering();
+
+    let redLineElement = document.querySelector('.redLine');
+    redLineElement.remove('div');
+    console.log(redLine)
+    redLine();
 };
 
 arrow_button__prev.addEventListener('click', renderPreviousWeek);
