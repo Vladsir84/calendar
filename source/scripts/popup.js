@@ -9,10 +9,11 @@ export const addButton = (event) => {
 
 const timeListElemStart = document.querySelector('.start-time');
 const timeListElemEnd = document.querySelector('.end-time');
-// const popupWindow = document.querySelector(`.calendar-visualization`);
+const popupWindow = document.querySelector(`.calendar-visualization`);
 
 const btnCreate = document.querySelector('.create-button');
 
+popupWindow.addEventListener('click', addButton);
 btnCreate.addEventListener('click', addButton);
 
 export const setTimer = (from, to) => {
