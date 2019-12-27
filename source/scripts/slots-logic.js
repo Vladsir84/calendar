@@ -16,7 +16,7 @@ calendar_visualization.addEventListener('click', emptyCellClick);
 let eventPlace = document.querySelectorAll('.day');
 let eventDay = document.querySelectorAll('.day-number');
 
-export function displayEvent(starttime, endTime, text) {
+export function displayEvent(starttime, endTime, name, descriprion) {
     starttime = new Date(starttime);
     endTime = new Date(endTime);
     if (arrayOfDates[0].getMonth() === starttime.getMonth()) {
@@ -32,8 +32,9 @@ export function displayEvent(starttime, endTime, text) {
                 let margin = +timeParts[0] * 60 + +timeParts[1];
 
                 activeEvent.style.marginTop = `${margin + 100}px`;
-                activeEvent.innerHTML += `${text}<br>`
-                activeEvent.innerHTML += `${(starttime + '').split(' ')[4]} - ${(endTime + '').split(' ')[4]}`;
+                activeEvent.innerHTML += `${name}<br>`
+                activeEvent.innerHTML += `${(starttime + '').split(' ')[4]} - ${(endTime + '').split(' ')[4]}<br>`;
+                activeEvent.innerHTML += `${descriprion}`;
             }
         }
     }
@@ -41,7 +42,7 @@ export function displayEvent(starttime, endTime, text) {
 
 export function renderEvents(arrOfEvents) {
     for (let i = 0; i < arrOfEvents.length; i++) {
-        displayEvent(arrOfEvents[i].startDate, arrOfEvents[i].endDate, name);
+        displayEvent(arrOfEvents[i].startDate, arrOfEvents[i].endDate, arrOfEvents[i].name, arrOfEvents[i].description);
     }
 };
 
