@@ -1,9 +1,5 @@
 import { arrOfEvents } from './storage.js';
 
-let selectedId;
-let selectedElem;
-
-
 const inputName = document.querySelector(`.input__name`);
 const startDates = document.querySelector(`.start-date`);
 const endDates = document.querySelector(`.end-date`);
@@ -114,6 +110,9 @@ export const timeElem = () => {
 
     return resultTime.join('');
 }
+
+let selectedId;
+let selectedElem;
 
 export const renderTimeList = () => {
     timeListElemStart.innerHTML = timeElem();
