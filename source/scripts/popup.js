@@ -52,26 +52,26 @@ export const addButton = (event) => {
     } else {
         btnUpdate.classList.add("update")
 
-        const getId = event.target.dataset.idNumber;
-        let eventObj = arrOfEvents.find(elem => elem.id == getId);
-        let startEventTime = new Date(arrOfEvents.startDate);
-        let endEventTime = new Date(arrOfEvents.endDate);
-        let year = startEventTime.getFullYear();
-        let months = counter(startEventTime.getMonth() + 1);
-        let day = counter(startEventTime.getDate());
-        let valueStartHour = counter(startEventTime.getHours());
-        let valueStartMin = counter(startEventTime.getMinutes());
-        let valueEndHour = counter(endEventTime.getHours());
-        let valueEndMin = counter(endEventTime.getMinutes());
+//         const getId = event.target.dataset.idNumber;
+//         let eventObj = arrOfEvents.find(elem => elem.id == getId);
+//         let startEventTime = new Date(arrOfEvents.startDate);
+//         let endEventTime = new Date(arrOfEvents.endDate);
+//         let year = startEventTime.getFullYear();
+//         let months = counter(startEventTime.getMonth() + 1);
+//         let day = counter(startEventTime.getDate());
+//         let valueStartHour = counter(startEventTime.getHours());
+//         let valueStartMin = counter(startEventTime.getMinutes());
+//         let valueEndHour = counter(endEventTime.getHours());
+//         let valueEndMin = counter(endEventTime.getMinutes());
 
-        inputName.value = eventObj.name;
-        startDates.value = year + '-' + months + '-' + day;
-        endDates.value = startDates.value
-        startTime.value = `${valueStartHour+':'+valueStartMin}`
-        endTime.value = `${valueEndHour+':'+valueEndMin}`
-        description.value = eventObj.description;
+//         inputName.value = eventObj.name;
+//         startDates.value = year + '-' + months + '-' + day;
+//         endDates.value = startDates.value
+//         startTime.value = `${valueStartHour+':'+valueStartMin}`
+//         endTime.value = `${valueEndHour+':'+valueEndMin}`
+//         description.value = eventObj.description;
 
-        return selectedElem = eventObj, selectedId = getId;
+//         return selectedElem = eventObj, selectedId = getId;
     }
 }
 
