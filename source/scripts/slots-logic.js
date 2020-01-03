@@ -17,8 +17,6 @@ let eventPlace = document.querySelectorAll('.day');
 let eventDay = document.querySelectorAll('.day-number');
 
 export function displayEvent(starttime, endTime, name, descriprion) {
-    starttime = new Date(starttime);
-    endTime = new Date(endTime);
     if (arrayOfDates[0].getMonth() === starttime.getMonth()) {
         let diff = ((endTime - starttime) / 1000 / 60);
         let activeEvent = document.createElement('div');
@@ -43,7 +41,39 @@ export function displayEvent(starttime, endTime, name, descriprion) {
 export function renderEvents(arrOfEvents) {
     for (let i = 0; i < arrOfEvents.length; i++) {
         displayEvent(arrOfEvents[i].startDate, arrOfEvents[i].endDate, arrOfEvents[i].name, arrOfEvents[i].description);
-    }
+    };
 };
 
-// renderEvents(arrOfEvents);
+export function renderLongEvent(arrOfEvents) {
+    let lengthOfEvents = arrOfEvents.length;
+    for (let i = 0; i < lengthOfEvents; i++) {
+        if (arrOfEvents[i].startDate.getDate() != arrOfEvents[i].endDate.getDate()) {
+            let endDateOfEvent = (arrOfEvents[i].startDate + '').split(' ');
+            endDateOfEvent[4] = '23:59:00';
+            endDateOfEvent = new Date(endDateOfEvent.join(' '))
+            let shortEvent = {
+                id: 8,
+                name: '#8',
+                startDate: arrOfEvents[i].startDate,
+                endDate: endDateOfEvent,
+                description: 'eight',
+            };
+            arrOfEvents.push(shortEvent);
+
+            let startDateOfEvent = (arrOfEvents[i].endDate + '').split(' ');
+            startDateOfEvent[4] = '00:00:00';
+            startDateOfEvent = new Date(startDateOfEvent.join(' '))
+            let longEvent = {
+                id: 8,
+                name: '#8',
+                startDate: startDateOfEvent,
+                endDate: arrOfEvents[i].endDate,
+                description: 'eight',
+            };
+            arrOfEvents.push(longEvent);
+
+            arrOfEvents.splice(i, 1);
+            console.log(arrOfEvents)
+        }
+    };
+}

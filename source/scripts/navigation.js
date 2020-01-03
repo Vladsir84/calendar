@@ -1,6 +1,6 @@
 import { calendarRendering } from './calendar-visualization.js'
 import { arrOfEvents } from './storage.js'
-import { renderEvents } from './slots-logic.js'
+import { renderEvents, renderLongEvent } from './slots-logic.js'
 import { redLine } from './red-line.js'
 
 let dayNumbers = document.querySelectorAll('.day-number');
@@ -9,6 +9,9 @@ let dates = document.querySelector('.dates');
 export let arrayOfDates = [];
 
 export function createDates() {
+
+    renderLongEvent(arrOfEvents);
+
     let currentDayOfWeek = (new Date()).getDay();
 
     for (let i = 0; i < 7; i++) {
@@ -31,6 +34,7 @@ export function createDates() {
 };
 
 export function renderDates() {
+
     for (let i = 0; i < 7; i++) {
         let content = (arrayOfDates[i] + '').split(' ')[2];
         dayNumbers[i].innerHTML = content;
