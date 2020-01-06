@@ -73,7 +73,6 @@ export function renderLongEvent(arrOfEvents) {
             arrOfEvents.push(longEvent);
 
             arrOfEvents.splice(i, 1);
-            console.log(arrOfEvents)
         }
     };
 }
