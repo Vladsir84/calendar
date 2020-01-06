@@ -17,12 +17,15 @@ export function saveEvent() {
 
     createNewEvent(name, startDate, endDate, description);
     renderEvents(arrOfEvents);
+    const popup = document.querySelector(`.popup`);
+    popup.classList.remove('popup-switch');
 
     console.log(arrOfEvents);
 }
 
 function createNewEvent(name, startDate, endDate, description) {
     let newEvent = {
+        id: arrOfEvents.length,
         name: name,
         startDate: new Date(startDate),
         endDate: new Date(endDate),

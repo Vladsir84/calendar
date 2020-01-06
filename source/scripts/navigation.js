@@ -2,6 +2,7 @@ import { calendarRendering } from './calendar-visualization.js'
 import { arrOfEvents } from './storage.js'
 import { renderEvents, renderLongEvent } from './slots-logic.js'
 import { redLine } from './red-line.js'
+import { activeEventOnclick } from './edit-event.js'
 
 let dayNumbers = document.querySelectorAll('.day-number');
 let dates = document.querySelector('.dates');
@@ -48,6 +49,7 @@ export function renderDates() {
     let clear = document.querySelectorAll('.active_event')
     for (let i = 0; i < clear.length; i++) clear[i].remove();
     renderEvents(arrOfEvents);
+    activeEventOnclick();
     redLine();
 };
 
@@ -86,6 +88,7 @@ export function renderNextWeek() {
     }
     renderDates();
     calendarRendering();
+    activeEventOnclick();
 
     let redLineElement = document.querySelector('.redLine');
     if (redLineElement !== null) redLineElement.remove('div');
@@ -100,6 +103,7 @@ export function renderPreviousWeek() {
     }
     renderDates();
     calendarRendering();
+    activeEventOnclick();
 
     let redLineElement = document.querySelector('.redLine');
     if (redLineElement !== null) redLineElement.remove('div');
