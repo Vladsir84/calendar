@@ -1,19 +1,21 @@
 import { arrOfEvents } from './storage.js';
+import { deleteButtonOnclick } from './delete-event.js';
+
+let activeEvents = '';
 
 export function activeEventOnclick() {
-    let activeEvents = document.querySelectorAll('.active_event')
+    activeEvents = document.querySelectorAll('.active_event')
     for (let i = 0; i < activeEvents.length; i++) {
         activeEvents[i].addEventListener('click', function () {
             for (let j = 0; j < arrOfEvents.length; j++) {
-                if ((activeEvents[i].innerHTML + '').includes(arrOfEvents[j].name) &&
-                    (activeEvents[i].innerHTML + '').includes((arrOfEvents[j].startDate + '').split(' ')[4] + '')) {
+                if (event.target.dataset.id == arrOfEvents[j].id) {
                     displayCurrentEvent(arrOfEvents[j]);
-                    // editEvent();
+                    deleteButtonOnclick(arrOfEvents[j]);
                 }
             }
         })
     }
-};
+}
 
 function displayCurrentEvent(editedEvent) {
     const popup = document.querySelector(`.popup`);
@@ -54,5 +56,3 @@ function displayCurrentEvent(editedEvent) {
 // function editEvent() {
 
 // }
-
-activeEventOnclick();
