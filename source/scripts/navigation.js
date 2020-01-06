@@ -49,6 +49,7 @@ export function renderDates() {
     let clear = document.querySelectorAll('.active_event')
     for (let i = 0; i < clear.length; i++) clear[i].remove();
     renderEvents(arrOfEvents);
+    renderLongEvent(arrOfEvents);
     activeEventOnclick();
     redLine();
 };
