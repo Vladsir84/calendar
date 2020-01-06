@@ -5,3 +5,4 @@ import { emptyCellClick } from './slots-logic.js';
 import { addButton, timeElem, setTimer, renderTimeList } from './popup.js';
 import { arrOfEvents } from './storage.js';
 import { redLine } from './red-line.js';
+import { saveEvent } from './save-event.js';
