@@ -8,6 +8,8 @@ export function saveEvent() {
     event.preventDefault();
     const formData = [...new FormData(popupForm)];
 
+    console.log(formData);
+
     let name = formData[0][1];
     let startDate = `${formData[1][1]}T${formData[2][1]}`;
     let endDate = `${formData[4][1]}T${formData[3][1]}`;
@@ -15,6 +17,8 @@ export function saveEvent() {
 
     createNewEvent(name, startDate, endDate, description);
     renderEvents(arrOfEvents);
+
+    console.log(arrOfEvents);
 }
 
 function createNewEvent(name, startDate, endDate, description) {
