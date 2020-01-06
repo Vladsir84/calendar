@@ -1,6 +1,7 @@
 import { arrOfEvents } from './storage.js'
 import { renderEvents } from './slots-logic.js'
 import { activeEventOnclick } from './edit-event.js'
+import { renderDates } from './navigation.js'
 
 let popupForm = document.querySelector('.popup__form');
 export let saveButton = document.querySelector('.submit-button');
@@ -19,6 +20,7 @@ export function saveEvent() {
     const popup = document.querySelector(`.popup`);
     popup.classList.remove('popup-switch');
 
+    renderDates();
     activeEventOnclick();
 
     console.log(arrOfEvents);
