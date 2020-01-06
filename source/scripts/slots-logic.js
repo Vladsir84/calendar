@@ -6,8 +6,6 @@ export const emptyCellClick = event => {
     let dayNumber = event.target.dataset.number;
     let startTime = event.target.closest('.emptyRow').dataset.time.split(':')[0] - 1;
     let endTime = +event.target.closest('.emptyRow').dataset.time.split(':')[0];
-    console.log(startTime);
-    console.log(endTime);
     displayEvent(startTime, endTime, dayNumber);
 };
 
