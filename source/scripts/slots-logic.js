@@ -3,7 +3,7 @@ import { arrayOfDates } from './navigation.js';
 let eventPlace = document.querySelectorAll('.day');
 let eventDay = document.querySelectorAll('.day-number');
 
-export function displayEvent(starttime, endTime, name, descriprion) {
+export function displayEvent(starttime, endTime, name, descriprion, id) {
     if (arrayOfDates[0].getMonth() === starttime.getMonth()) {
         let diff = ((endTime - starttime) / 1000 / 60);
         let activeEvent = document.createElement('div');
@@ -20,6 +20,8 @@ export function displayEvent(starttime, endTime, name, descriprion) {
                 activeEvent.innerHTML += `${name}<br>`
                 activeEvent.innerHTML += `${(starttime + '').split(' ')[4]} - ${(endTime + '').split(' ')[4]}<br>`;
                 activeEvent.innerHTML += `${descriprion}`;
+
+                activeEvent.setAttribute('data-id', id);
             }
         }
     }
@@ -27,7 +29,8 @@ export function displayEvent(starttime, endTime, name, descriprion) {
 
 export function renderEvents(arrOfEvents) {
     for (let i = 0; i < arrOfEvents.length; i++) {
-        displayEvent(arrOfEvents[i].startDate, arrOfEvents[i].endDate, arrOfEvents[i].name, arrOfEvents[i].description);
+        displayEvent(arrOfEvents[i].startDate, arrOfEvents[i].endDate, arrOfEvents[i].name,
+            arrOfEvents[i].description, arrOfEvents[i].id);
     };
 };
 

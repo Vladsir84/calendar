@@ -88,7 +88,6 @@ export function renderNextWeek() {
     }
     renderDates();
     calendarRendering();
-    activeEventOnclick();
 
     let redLineElement = document.querySelector('.redLine');
     if (redLineElement !== null) redLineElement.remove('div');
@@ -103,7 +102,6 @@ export function renderPreviousWeek() {
     }
     renderDates();
     calendarRendering();
-    activeEventOnclick();
 
     let redLineElement = document.querySelector('.redLine');
     if (redLineElement !== null) redLineElement.remove('div');
