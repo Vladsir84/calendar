@@ -2,14 +2,14 @@ import { arrayOfDates } from './navigation.js';
 
 let calendar_visualization = document.querySelector('.calendar-visualization');
 
-export const emptyCellClick = event => {
-    let dayNumber = event.target.dataset.number;
-    let startTime = event.target.closest('.emptyRow').dataset.time.split(':')[0] - 1;
-    let endTime = +event.target.closest('.emptyRow').dataset.time.split(':')[0];
-    displayEvent(startTime, endTime, dayNumber);
-};
+// export const emptyCellClick = event => {
+//     let dayNumber = event.target.dataset.number;
+//     let startTime = event.target.closest('.emptyRow').dataset.time.split(':')[0] - 1;
+//     let endTime = +event.target.closest('.emptyRow').dataset.time.split(':')[0];
+//     displayEvent(startTime, endTime, dayNumber);
+// };
 
-calendar_visualization.addEventListener('click', emptyCellClick);
+// calendar_visualization.addEventListener('click', emptyCellClick);
 
 let eventPlace = document.querySelectorAll('.day');
 let eventDay = document.querySelectorAll('.day-number');

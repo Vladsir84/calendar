@@ -7,7 +7,7 @@ export const calendarRendering = () => {
 
     for (let i = 1; i <= 24; i++) {
         const day = document.createElement('div');
-        day.setAttribute('data-time', `${i < 10 ? 0 : ''}${i}:00 `);
+        day.setAttribute('data-time', `${i < 10 ? 0 : ''}${i}:00`);
         day.classList.add('emptyRow');
         visual.append(day);
 
