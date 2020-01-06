@@ -1,14 +1,13 @@
 import { arrOfEvents } from './storage.js'
 import { renderEvents } from './slots-logic.js'
+import { activeEventOnclick } from './edit-event.js'
 
 let popupForm = document.querySelector('.popup__form');
-let saveButton = document.querySelector('.submit-button');
+export let saveButton = document.querySelector('.submit-button');
 
 export function saveEvent() {
     event.preventDefault();
     const formData = [...new FormData(popupForm)];
-
-    console.log(formData);
 
     let name = formData[0][1];
     let startDate = `${formData[1][1]}T${formData[2][1]}`;
@@ -19,6 +18,8 @@ export function saveEvent() {
     renderEvents(arrOfEvents);
     const popup = document.querySelector(`.popup`);
     popup.classList.remove('popup-switch');
+
+    activeEventOnclick();
 
     console.log(arrOfEvents);
 }
