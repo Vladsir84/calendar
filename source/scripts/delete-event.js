@@ -12,7 +12,6 @@ export function deleteButtonOnclick(obj) {
                 const popup = document.querySelector(`.popup`);
                 popup.classList.remove('popup-switch');
                 renderDates();
-                console.log(arrOfEvents);
                 return;
             }
         }

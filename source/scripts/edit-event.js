@@ -1,16 +1,19 @@
 import { arrOfEvents } from './storage.js';
 import { deleteButtonOnclick } from './delete-event.js';
-
-let activeEvents = '';
+import { renderDates } from './navigation.js';
 
 export function activeEventOnclick() {
-    activeEvents = document.querySelectorAll('.active_event')
+    let activeEvents = document.querySelectorAll('.active_event')
     for (let i = 0; i < activeEvents.length; i++) {
         activeEvents[i].addEventListener('click', function () {
             for (let j = 0; j < arrOfEvents.length; j++) {
                 if (event.target.dataset.id == arrOfEvents[j].id) {
                     displayCurrentEvent(arrOfEvents[j]);
                     deleteButtonOnclick(arrOfEvents[j]);
+
+                    // edit event
+                    let editButton = document.querySelector('.submit-button ');
+                    editButton.addEventListener('click', editEvent.bind(editButton, arrOfEvents[j]));
                 }
             }
         })
@@ -53,6 +56,17 @@ function displayCurrentEvent(editedEvent) {
     description.value = editedEvent.description;
 }
 
-// function editEvent() {
+function editEvent(obj) {
 
-// }
+    for (let i = 0; i < arrOfEvents.length; i++) {
+        if (obj.id == arrOfEvents[i].id) {
+            arrOfEvents.splice(i, 1);
+            renderDates();
+        }
+    }
+
+    let editButton = document.querySelector('.submit-button ');
+    editButton.removeEventListener('click', editEvent);
+    const popup = document.querySelector(`.popup`);
+    popup.classList.remove('popup-switch');
+}
