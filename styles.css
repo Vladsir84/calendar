@@ -194,7 +194,7 @@ header {
 .popup {
   position: fixed;
   display: flex;
-  left: 40%;
+  left: 35%;
   top: 0%;
   justify-content: center;
   align-items: center;
@@ -204,7 +204,6 @@ header {
 }
 .popup__form {
   position: relative;
-  width: 450px;
   height: 400px;
   padding: 10px 10px 5px;
   border-radius: 6px;
@@ -253,11 +252,6 @@ header {
   border-radius: 6px;
 }
 
-.start-time,
-.start-time {
-  width: 65px;
-}
-
 .end-date,
 .start-date {
   width: 140px;
@@ -290,6 +284,10 @@ header {
   margin-left: 10px;
   resize: none;
   border: none;
+}
+
+.Tiny {
+  margin-right: 5px;
 }
 
 * {
