@@ -25,7 +25,7 @@ export function saveEvent() {
     activeEventOnclick();
     calendarRendering();
 
-    console.log(arrOfEvents);
+    console.log(arrOfEvents)
 }
 
 function createNewEvent(name, startDate, endDate, description) {
@@ -36,7 +36,9 @@ function createNewEvent(name, startDate, endDate, description) {
         endDate: new Date(endDate),
         description: description,
     }
-    arrOfEvents.push(newEvent);
+    if (!isNaN(newEvent.startDate.getTime()) && !isNaN(newEvent.endDate.getTime())) {
+        arrOfEvents.push(newEvent);
+    }
 }
 
 saveButton.addEventListener('click', saveEvent);
