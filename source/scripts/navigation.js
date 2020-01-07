@@ -39,7 +39,9 @@ export function renderDates() {
     for (let i = 0; i < 7; i++) {
         let content = (arrayOfDates[i] + '').split(' ')[2];
         dayNumbers[i].innerHTML = content;
-        if (arrayOfDates[i] == new Date() + '') {
+        console.log(arrayOfDates[i]);
+        console.log(new Date() + '');
+        if ((arrayOfDates[i] + '').split(' ')[2] === (new Date() + '').split(' ')[2]) {
             dayNumbers[i].classList.add('current-day');
         } else {
             dayNumbers[i].classList.remove('current-day');
