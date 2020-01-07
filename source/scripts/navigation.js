@@ -74,9 +74,9 @@ export function showCurrentMonthAndYear() {
     }
 
     if (resultYears.length == 1) {
-        dates.innerHTML = `${resultMonth[0]}  ${resultYears[0]}`;
+        dates.innerHTML = `${resultMonth[0]} ${resultYears[0]}`;
     } else {
-        dates.innerHTML = `${resultMonth[0]}  ${resultYears[0]} - ${resultMonth[1]}  ${resultYears[1]}`;
+        dates.innerHTML = `${resultMonth[0]} ${resultYears[0]} - ${resultMonth[1]} ${resultYears[1]}`;
     }
 };
 

@@ -191,6 +191,10 @@ header {
   border-top: #ea4335 solid 2px;
 }
 
+.temporary-cell {
+  background-color: violet;
+}
+
 .popup {
   position: fixed;
   display: flex;

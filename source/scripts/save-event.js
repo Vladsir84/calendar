@@ -2,6 +2,7 @@ import { arrOfEvents } from './storage.js'
 import { renderEvents } from './slots-logic.js'
 import { activeEventOnclick } from './edit-event.js'
 import { renderDates } from './navigation.js'
+import { calendarRendering } from './calendar-visualization.js';
 
 let popupForm = document.querySelector('.popup__form');
 export let saveButton = document.querySelector('.submit-button');
@@ -22,6 +23,7 @@ export function saveEvent() {
 
     renderDates();
     activeEventOnclick();
+    calendarRendering();
 
     console.log(arrOfEvents);
 }

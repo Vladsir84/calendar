@@ -1,5 +1,11 @@
+import { createTemporaryCell } from './temporary-cell.js';
+import { calendarRendering } from './calendar-visualization.js';
+
 export const addButton = (event) => {
     if (event.target.classList.value === 'emptyCell') {
+
+        createTemporaryCell(event.target);
+
         let startDate = document.querySelector('.start-date');
         let startTime = document.querySelector('.start-time');
         let endTime = document.querySelector('.end-time');
@@ -31,4 +37,5 @@ closeButton.onclick = function () {
     event.preventDefault();
     const popup = document.querySelector(`.popup`);
     popup.classList.remove('popup-switch');
+    calendarRendering();
 }
