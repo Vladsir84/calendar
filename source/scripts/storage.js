@@ -1,6 +1,6 @@
 export let arrOfEvents = [{
     id: 1,
-    name: '#1',
+    name: 'title #1',
     startDate: new Date('2019-12-23T02:00'),
     endDate: new Date('2019-12-23T13:00'),
     description: 'one',
@@ -8,7 +8,7 @@ export let arrOfEvents = [{
 
 {
     id: 2,
-    name: '#2',
+    name: 'title #2',
     startDate: new Date('2019-12-24T02:00'),
     endDate: new Date('2019-12-24T13:00'),
     description: 'two',
@@ -16,7 +16,7 @@ export let arrOfEvents = [{
 
 {
     id: 3,
-    name: '#3',
+    name: 'title #3',
     startDate: new Date('2019-12-25T02:00'),
     endDate: new Date('2019-12-25T13:00'),
     description: 'three',
@@ -24,7 +24,7 @@ export let arrOfEvents = [{
 
 {
     id: 4,
-    name: '#4',
+    name: 'title #4',
     startDate: new Date('2019-12-26T02:00'),
     endDate: new Date('2019-12-26T13:00'),
     description: 'four',
@@ -32,7 +32,7 @@ export let arrOfEvents = [{
 
 {
     id: 5,
-    name: '#5',
+    name: 'title #5',
     startDate: new Date('2019-12-27T02:00'),
     endDate: new Date('2019-12-27T13:00'),
     description: 'five',
@@ -40,7 +40,7 @@ export let arrOfEvents = [{
 
 {
     id: 6,
-    name: '#6',
+    name: 'title #6',
     startDate: new Date('2019-12-28T02:00'),
     endDate: new Date('2019-12-28T13:00'),
     description: 'six',
@@ -48,7 +48,7 @@ export let arrOfEvents = [{
 
 {
     id: 7,
-    name: '#7',
+    name: 'title #7',
     startDate: new Date('2019-12-29T02:00'),
     endDate: new Date('2019-12-29T13:00'),
     description: 'seven',
@@ -56,7 +56,7 @@ export let arrOfEvents = [{
 
 {
     id: 8,
-    name: '#8',
+    name: 'title #8',
     startDate: new Date('2019-01-10T02:00'),
     endDate: new Date('2019-01-11T13:00'),
     description: 'seven',
