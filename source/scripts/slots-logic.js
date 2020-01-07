@@ -65,4 +65,7 @@ export function renderLongEvent(arrOfEvents) {
             arrOfEvents.splice(i, 1);
         }
     };
+    renderEvents(arrOfEvents)
 }
+
+// export function renderLongEvent(arrOfEvents) { }

@@ -11,8 +11,6 @@ export let arrayOfDates = [];
 
 export function createDates() {
 
-    renderLongEvent(arrOfEvents);
-
     let currentDayOfWeek = (new Date()).getDay();
 
     for (let i = 0; i < 7; i++) {
@@ -32,6 +30,7 @@ export function createDates() {
             arrayOfDates.push(new Date(previosDate));
         }
     }
+    renderLongEvent(arrOfEvents);
 };
 
 export function renderDates() {
@@ -48,8 +47,8 @@ export function renderDates() {
     showCurrentMonthAndYear();
     let clear = document.querySelectorAll('.active_event')
     for (let i = 0; i < clear.length; i++) clear[i].remove();
-    renderEvents(arrOfEvents);
     renderLongEvent(arrOfEvents);
+    renderEvents(arrOfEvents);
     activeEventOnclick();
     redLine();
 };
