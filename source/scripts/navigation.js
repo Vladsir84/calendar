@@ -39,8 +39,6 @@ export function renderDates() {
     for (let i = 0; i < 7; i++) {
         let content = (arrayOfDates[i] + '').split(' ')[2];
         dayNumbers[i].innerHTML = content;
-        console.log(arrayOfDates[i]);
-        console.log(new Date() + '');
         if ((arrayOfDates[i] + '').split(' ')[2] === (new Date() + '').split(' ')[2]) {
             dayNumbers[i].classList.add('current-day');
         } else {
@@ -58,23 +56,28 @@ export function renderDates() {
 
 export function showCurrentMonthAndYear() {
     let arrOfMonth = [];
-    let result = [];
+    let arrOfYears = [];
+    let resultMonth = [];
+    let resultYears = [];
+
     for (let i = 0; i < arrayOfDates.length; i++) {
         arrOfMonth.push((arrayOfDates[i] + '').split(' ')[1]);
+        arrOfYears.push((arrayOfDates[i] + '').split(' ')[3]);
     }
 
     for (let str of arrOfMonth) {
-        if (!result.includes(str)) result.push(str);
+        if (!resultMonth.includes(str)) resultMonth.push(str);
     }
 
-    if (result.length == 1) {
-        result = `${result[0]}`;
+    for (let str of arrOfYears) {
+        if (!resultYears.includes(str)) resultYears.push(str);
+    }
+
+    if (resultYears.length == 1) {
+        dates.innerHTML = `${resultMonth[0]}  ${resultYears[0]}`;
     } else {
-        result = `${result[0]} - ${result[1]}`;
+        dates.innerHTML = `${resultMonth[0]}  ${resultYears[0]} - ${resultMonth[1]}  ${resultYears[1]}`;
     }
-
-    let year = (arrayOfDates[0] + '').split(' ')[3];
-    dates.innerHTML = `${result}  ${year}`;
 };
 
 createDates();
