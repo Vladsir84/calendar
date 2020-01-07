@@ -42,8 +42,8 @@ export function renderLongEvent(arrOfEvents) {
             endDateOfEvent[4] = '23:59:00';
             endDateOfEvent = new Date(endDateOfEvent.join(' '))
             let shortEvent = {
-                id: 8,
-                name: '#8',
+                id: lengthOfEvents + 1,
+                name: 'title',
                 startDate: arrOfEvents[i].startDate,
                 endDate: endDateOfEvent,
                 description: 'eight',
@@ -54,8 +54,8 @@ export function renderLongEvent(arrOfEvents) {
             startDateOfEvent[4] = '00:00:00';
             startDateOfEvent = new Date(startDateOfEvent.join(' '))
             let longEvent = {
-                id: 8,
-                name: '#8',
+                id: lengthOfEvents + 1,
+                name: 'title',
                 startDate: startDateOfEvent,
                 endDate: arrOfEvents[i].endDate,
                 description: 'eight',

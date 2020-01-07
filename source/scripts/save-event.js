@@ -30,7 +30,7 @@ export function saveEvent() {
 
 function createNewEvent(name, startDate, endDate, description) {
     let newEvent = {
-        id: arrOfEvents.length,
+        id: arrOfEvents.length + 1,
         name: name,
         startDate: new Date(startDate),
         endDate: new Date(endDate),
