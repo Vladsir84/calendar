@@ -29,29 +29,31 @@ export const addButton = (event) => {
     if (event.target.classList.value === 'emptyCell') {
         createTemporaryCell(event.target);
 
-
-
+        const popup = document.querySelector(`.popup`);
+        popup.classList.add('popup-switch');
 
         // вставляем время в попап
         startTime.value = event.target.closest('.emptyRow').dataset.time + '';
         endTime.value = event.target.closest('.emptyRow').dataset.time + '';
 
         // вставляем дату в попап
-        let startMonth = '0'
+        let startMonth = '01'
         let startYear = '2020'
-        let startDay = event.target.dataset.day
+        let startDay = event.target.dataset.date
         startDate.value = `${startYear}-${startMonth}-${startDay}`;
         endDate.value = `${startYear}-${startMonth}-${startDay}`;
+        console.log(`${startYear}-${startMonth}-${startDay}`);
+
+    } else {
+        const popup = document.querySelector(`.popup`);
+        popup.classList.add('popup-switch');
+
+        startDate.value = dateToString(new Date());
+        endDate.value = dateToString(new Date());
+        startTime.value = timeToString(new Date());
+        endTime.value = timeToString(new Date());
+
     }
-
-    const popup = document.querySelector(`.popup`);
-    popup.classList.add('popup-switch');
-
-    startDate.value = dateToString(new Date());
-    endDate.value = dateToString(new Date());
-    startTime.value = timeToString(new Date());
-    endTime.value = timeToString(new Date());
-
 };
 
 
@@ -63,7 +65,7 @@ popupWindow.addEventListener('click', addButton);
 btnCreate.addEventListener('click', addButton);
 
 let closeButton = document.querySelector('.close');
-closeButton.onclick = function() {
+closeButton.onclick = function () {
     event.preventDefault();
     const popup = document.querySelector(`.popup`);
     popup.classList.remove('popup-switch');

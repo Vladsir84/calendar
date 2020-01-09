@@ -35,37 +35,35 @@ export function renderEvents(arrOfEvents) {
 };
 
 export function renderLongEvent(arrOfEvents) {
-    let lengthOfEvents = arrOfEvents.length;
-    for (let i = 0; i < lengthOfEvents; i++) {
-        if (arrOfEvents[i].startDate.getDate() != arrOfEvents[i].endDate.getDate()) {
-            let endDateOfEvent = (arrOfEvents[i].startDate + '').split(' ');
-            endDateOfEvent[4] = '23:59:00';
-            endDateOfEvent = new Date(endDateOfEvent.join(' '))
-            let shortEvent = {
-                id: lengthOfEvents + 1,
-                name: 'title',
-                startDate: arrOfEvents[i].startDate,
-                endDate: endDateOfEvent,
-                description: 'eight',
-            };
-            arrOfEvents.push(shortEvent);
+    // let lengthOfEvents = arrOfEvents.length;
+    // for (let i = 0; i < lengthOfEvents; i++) {
+    //     if (arrOfEvents[i].startDate.getDate() != arrOfEvents[i].endDate.getDate()) {
+    //         let endDateOfEvent = (arrOfEvents[i].startDate + '').split(' ');
+    //         endDateOfEvent[4] = '23:59:00';
+    //         endDateOfEvent = new Date(endDateOfEvent.join(' '))
+    //         let shortEvent = {
+    //             id: lengthOfEvents + 1,
+    //             name: 'title',
+    //             startDate: arrOfEvents[i].startDate,
+    //             endDate: endDateOfEvent,
+    //             description: 'eight',
+    //         };
+    //         arrOfEvents.push(shortEvent);
 
-            let startDateOfEvent = (arrOfEvents[i].endDate + '').split(' ');
-            startDateOfEvent[4] = '00:00:00';
-            startDateOfEvent = new Date(startDateOfEvent.join(' '))
-            let longEvent = {
-                id: lengthOfEvents + 1,
-                name: 'title',
-                startDate: startDateOfEvent,
-                endDate: arrOfEvents[i].endDate,
-                description: 'eight',
-            };
-            arrOfEvents.push(longEvent);
+    //         let startDateOfEvent = (arrOfEvents[i].endDate + '').split(' ');
+    //         startDateOfEvent[4] = '00:00:00';
+    //         startDateOfEvent = new Date(startDateOfEvent.join(' '))
+    //         let longEvent = {
+    //             id: lengthOfEvents + 1,
+    //             name: 'title',
+    //             startDate: startDateOfEvent,
+    //             endDate: arrOfEvents[i].endDate,
+    //             description: 'eight',
+    //         };
+    //         arrOfEvents.push(longEvent);
 
-            arrOfEvents.splice(i, 1);
-        }
-    };
-    renderEvents(arrOfEvents)
+    //         arrOfEvents.splice(i, 1);
+    //     }
+    // };
+    // renderEvents(arrOfEvents)
 }
-
-// export function renderLongEvent(arrOfEvents) { }
