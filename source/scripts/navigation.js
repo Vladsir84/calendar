@@ -54,7 +54,6 @@ export function renderDates() {
 };
 
 export function showCurrentMonthAndYear() {
-    console.log(arrOfEvents)
 
     let arrOfMonth = [];
     let arrOfYears = [];
