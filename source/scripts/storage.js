@@ -57,8 +57,8 @@ export let arrOfEvents = [{
 {
     id: 8,
     name: 'title #8',
-    startDate: new Date('2019-01-10T02:00'),
-    endDate: new Date('2019-01-11T13:00'),
-    description: 'seven',
+    startDate: new Date('2020-01-10T01:00'),
+    endDate: new Date('2020-01-11T13:00'),
+    description: 'eight',
 },
 ]
