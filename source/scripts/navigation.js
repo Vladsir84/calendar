@@ -1,6 +1,6 @@
 import { calendarRendering } from './calendar-visualization.js'
 import { arrOfEvents } from './storage.js'
-import { renderEvents, renderLongEvent } from './slots-logic.js'
+import { renderEvents } from './slots-logic.js'
 import { redLine } from './red-line.js'
 import { activeEventOnclick } from './edit-event.js'
 
@@ -30,7 +30,6 @@ export function createDates() {
             arrayOfDates.push(new Date(previosDate));
         }
     }
-    renderLongEvent(arrOfEvents);
 };
 
 export function renderDates() {
@@ -47,7 +46,6 @@ export function renderDates() {
     showCurrentMonthAndYear();
     let clear = document.querySelectorAll('.active_event')
     for (let i = 0; i < clear.length; i++) clear[i].remove();
-    renderLongEvent(arrOfEvents);
     renderEvents(arrOfEvents);
     activeEventOnclick();
     redLine();
