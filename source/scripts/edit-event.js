@@ -61,8 +61,8 @@ function editEvent(obj) {
     for (let i = 0; i < arrOfEvents.length; i++) {
         if (obj.id == arrOfEvents[i].id) {
             arrOfEvents.splice(i, 1);
-            renderDates();
             savetoLocalStorage();
+            renderDates();
         }
     }
 
