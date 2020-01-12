@@ -1,4 +1,5 @@
 import { arrayOfDates } from './navigation.js'
+import { arrOfEvents } from './storage.js';
 export const visual = document.querySelector('.calendar-visualization');
 
 export const calendarRendering = () => {
@@ -23,6 +24,7 @@ export const calendarRendering = () => {
             day.append(hour);
         }
     }
+    // localStorage.clear();
 }
 
 calendarRendering();

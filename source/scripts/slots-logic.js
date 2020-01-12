@@ -1,5 +1,5 @@
 import { arrayOfDates } from './navigation.js';
-import { activeEventOnclick } from './edit-event.js';
+import { arrOfEvents, savetoLocalStorage, getFromLocalStorage } from './storage.js'
 
 let eventPlace = document.querySelectorAll('.day');
 let eventDay = document.querySelectorAll('.day-number');
@@ -64,8 +64,13 @@ export function displayEvent(starttime, endTime, name, descriprion, id) {
     }
 };
 
-export function renderEvents(arrOfEvents) {
+export function renderEvents() {
+    getFromLocalStorage();
     for (let i = 0; i < arrOfEvents.length; i++) {
+        if (typeof (arrOfEvents[i].startDate) !== 'object') {
+            arrOfEvents[i].startDate = new Date(arrOfEvents[i].startDate);
+            arrOfEvents[i].endDate = new Date(arrOfEvents[i].endDate);
+        }
         displayEvent(arrOfEvents[i].startDate, arrOfEvents[i].endDate, arrOfEvents[i].name,
             arrOfEvents[i].description, arrOfEvents[i].id);
     };

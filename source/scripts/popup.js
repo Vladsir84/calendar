@@ -37,12 +37,16 @@ export const addButton = (event) => {
         endTime.value = event.target.closest('.emptyRow').dataset.time + '';
 
         // вставляем дату в попап
+        let month = document.querySelector('.dates').innerHTML.split(' ')[0];
         let startMonth = '01'
-        let startYear = '2020'
+
+        let year = document.querySelector('.dates').innerHTML.split(' ')[1];
+        let startYear = year;
+
         let startDay = event.target.dataset.date
+
         startDate.value = `${startYear}-${startMonth}-${startDay}`;
         endDate.value = `${startYear}-${startMonth}-${startDay}`;
-        console.log(`${startYear}-${startMonth}-${startDay}`);
 
     } else {
         const popup = document.querySelector(`.popup`);

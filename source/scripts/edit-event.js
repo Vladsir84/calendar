@@ -1,4 +1,4 @@
-import { arrOfEvents } from './storage.js';
+import { arrOfEvents, savetoLocalStorage } from './storage.js';
 import { deleteButtonOnclick } from './delete-event.js';
 import { renderDates } from './navigation.js';
 
@@ -62,6 +62,7 @@ function editEvent(obj) {
         if (obj.id == arrOfEvents[i].id) {
             arrOfEvents.splice(i, 1);
             renderDates();
+            savetoLocalStorage();
         }
     }
 
