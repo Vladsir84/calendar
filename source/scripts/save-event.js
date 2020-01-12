@@ -3,6 +3,7 @@ import { renderEvents } from './slots-logic.js'
 import { activeEventOnclick } from './edit-event.js'
 import { renderDates } from './navigation.js'
 import { calendarRendering } from './calendar-visualization.js';
+import { validate } from './validate.js';
 
 let popupForm = document.querySelector('.popup__form');
 export let saveButton = document.querySelector('.submit-button');
@@ -15,6 +16,10 @@ export function saveEvent() {
     let startDate = `${formData[1][1]}T${formData[2][1]}`;
     let endDate = `${formData[4][1]}T${formData[3][1]}`;
     let description = formData[5][1];
+
+    if (validate(new Date(startDate), new Date(endDate)) == false) {
+        return;
+    }
 
     createNewEvent(name, startDate, endDate, description);
     renderEvents(arrOfEvents);
