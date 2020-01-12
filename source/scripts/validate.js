@@ -15,7 +15,7 @@ export const errorDate = (start, end) => {
         alert('error');
         return false;
     }
-    // return true;
+    return true;
 }
 
 export const duration = (start, end) => {
@@ -27,7 +27,7 @@ export const duration = (start, end) => {
         alert('You cannot create an event longer than 6 hours')
         return false;
     }
-    // return true;
+    return true;
 }
 
 export const checkForUpdate = (start) => {
@@ -37,7 +37,7 @@ export const checkForUpdate = (start) => {
         alert('you cannot delete/update event 15 minutes before the start')
         return false
     }
-    // return true
+    return true
 }
 
 export const checkEvent = () => {
