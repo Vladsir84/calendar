@@ -59,7 +59,7 @@ export const checkEvent = () => {
         let eventEnd = new Date(arrOfEvents[i].endDate);
 
         if (startDate.value + 'T' + startTime.value == arrOfEvents[i].startDate) {
-            if (events[i].id == selectedId) return true;
+            if (arrOfEvents[i].id == selectedId) return true;
             alert('two events cannot intersect 1');
             return false;
         };
