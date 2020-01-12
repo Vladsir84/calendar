@@ -1,4 +1,4 @@
-import { arrOfEvents } from './storage.js'
+import { arrOfEvents, savetoLocalStorage } from './storage.js'
 import { renderEvents } from './slots-logic.js'
 import { activeEventOnclick } from './edit-event.js'
 import { renderDates } from './navigation.js'
@@ -17,15 +17,15 @@ export function saveEvent() {
     let description = formData[5][1];
 
     createNewEvent(name, startDate, endDate, description);
+    savetoLocalStorage();
     renderEvents(arrOfEvents);
+
     const popup = document.querySelector(`.popup`);
     popup.classList.remove('popup-switch');
 
     renderDates();
     activeEventOnclick();
     calendarRendering();
-
-    console.log(arrOfEvents)
 }
 
 function createNewEvent(name, startDate, endDate, description) {

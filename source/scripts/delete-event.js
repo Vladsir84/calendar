@@ -1,4 +1,4 @@
-import { arrOfEvents } from './storage.js'
+import { arrOfEvents, savetoLocalStorage } from './storage.js'
 import { renderDates } from './navigation.js'
 
 export function deleteButtonOnclick(obj) {
@@ -16,4 +16,5 @@ export function deleteButtonOnclick(obj) {
             }
         }
     }
+    savetoLocalStorage();
 }
