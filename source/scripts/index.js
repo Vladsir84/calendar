@@ -7,4 +7,4 @@ import { redLine } from './red-line.js';
 import { saveEvent } from './save-event.js';
 import { activeEventOnclick } from './edit-event.js';
 import { deleteButtonOnclick } from './delete-event.js';
-import { getFromLocalStorage } from './storage.js'
+import { getFromLocalStorage, onStorageChange } from './storage.js';

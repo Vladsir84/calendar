@@ -1,3 +1,5 @@
+import { renderDates } from './navigation.js';
+
 export let arrOfEvents = [];
 
 export function getFromLocalStorage() {
@@ -7,3 +9,12 @@ export function getFromLocalStorage() {
 export function savetoLocalStorage() {
     localStorage.setItem('storage', JSON.stringify(arrOfEvents));
 };
+
+export function onStorageChange(event) {
+    if (event.key == 'storage') {
+        arrOfEvents = localStorage.getItem('storage') ? JSON.parse(localStorage.getItem('storage')) : []
+        renderDates();
+    }
+}
+
+window.addEventListener('storage', onStorageChange);
