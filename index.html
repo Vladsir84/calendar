@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Calendar</title>
 </head>
@@ -102,10 +101,17 @@
                 close
             </button>
             <input name="title" class="input__name" type="text" placeholder="Add title">
+
+            <div class="color-picker">
+                <label class="color-picker_label">
+                  <span class="color-picker_label-text">Select a color</span>
+                  <input class="event__color-picker" type="color" name="color" value="#4183f1">
+                </label>
+            </div>
+
             <div class="date-block ">
                 <i class="Tiny material-icons">access_time</i>
-                <input class="start-date input-style" type="date" name="trip-start" value="2019-12-23"
-                    max="2020-12-23 ">
+                <input class="start-date input-style" type="date" name="trip-start" value="2019-12-23" max="2020-12-23 ">
 
                 <input type="time" class="start-time time-list input-style " name="start-time" value="11:11">
                 <input type="time" class="end-time time-list input-style " name="end-time" value="11:11">
@@ -115,18 +121,19 @@
             <div class="description ">
                 <i class="Tiny material-icons ">format_align_left
                 </i>
-                <textarea class="description-input " name="text" cols="42 " rows="4 "
-                    placeholder="Add description"></textarea>
+                <textarea class="description-input " name="text" cols="42 " rows="4 " placeholder="Add description"></textarea>
             </div>
             <div class="control ">
                 <button class="delete-event ">
-                    <i class="Tiny material-icons ">delete</i>
+                    <i class="Tiny material-icons material-icons-delete">delete</i>
                 </button>
                 <button type="submit" class="submit-button ">Save</button>
             </div>
+
         </form>
         <span class="event__name "></span>
         <span class="event__description "></span>
+
     </section>
 
     <script src="./source/scripts/index.js" type="module"></script>
